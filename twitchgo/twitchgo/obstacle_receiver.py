@@ -3,31 +3,42 @@ from rclpy.node import Node
 
 from std_msgs.msg import Bool
 
+class Movement:
+    pass
 
-class ObstacleActivator(Node):
+class Servomotor:
+    pass
 
-    def __init__(self, obstacle_name: str, control_method):
+class MotorObstacleReceiver(Node):
+
+    def __init__(self, obstacle_name: str):
         super().__init__(obstacle_name)
-        self._control_method = control_method
+        self._obstacel_mover = Movement()
         self.subscription = self.create_subscription(Bool, f'{obstacle_name}_topic', self.listener_callback, 10)
 
     def listener_callback(self, msg: Bool):
-        self._control_method(msg.data)
+        if msg.data:
+            self._obstacel_mover.move_all(100, 100)
+        else:
+            self._obstacel_mover.stop()
 
+
+class MotorObstacleReceiver(Node):
+
+    def __init__(self, obstacle_name: str):
+        super().__init__(obstacle_name)
+        self._obstacel_mover = Servomotor()
+        self.subscription = self.create_subscription(Bool, f'{obstacle_name}_topic', self.listener_callback, 10)
+
+    def listener_callback(self, msg: Bool):
+        if msg.data:
+            self._obstacel_mover.moveUp()
+        else:
+            self._obstacel_mover.moveDown()
+            
 
 def main(args=None):
     pass
-    # rclpy.init(args=args)
-
-    # minimal_publisher = MinimalPublisher()
-
-    # rclpy.spin(minimal_publisher)
-
-    # # Destroy the node explicitly
-    # # (optional - otherwise it will be done automatically
-    # # when the garbage collector destroys the node object)
-    # minimal_publisher.destroy_node()
-    # rclpy.shutdown()
 
 
 if __name__ == '__main__':
