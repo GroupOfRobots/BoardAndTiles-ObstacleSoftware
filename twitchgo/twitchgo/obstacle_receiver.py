@@ -18,7 +18,7 @@ class MotorObstacleReceiver(Node):
 
     def listener_callback(self, msg: Bool):
         if msg.data:
-            self._obstacel_mover.move_all(100, 100)
+            self._obstacel_mover.move_all(50, 50)
         else:
             self._obstacel_mover.stop()
 
