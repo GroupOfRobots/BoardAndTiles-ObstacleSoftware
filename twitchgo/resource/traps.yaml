@@ -1,16 +1,4 @@
 traps:
-  - name: white
-    label: "Biała"
-    ros_topic: "/traps/white"
-    config:
-      type: servo
-      pin: TODO
-  - name: yellow
-    label: "Żółta"
-    ros_topic: "/traps/yellow"
-    config:
-      type: servo
-      pin: TODO
   - name: green
     label: "Zielona"
     ros_topic: "/traps/green"
@@ -19,3 +7,44 @@ traps:
       forward_pin: TODO
       backward_pin: TODO
       pwm_pin: TODO
+  - name: red
+    label: "Czerwona"
+    ros_topic: "/traps/red"
+    config:
+      type: motor
+      forward_pin: TODO
+      backward_pin: TODO
+      pwm_pin: TODO
+  - name: purple
+    label: "Fioletowa"
+    ros_topic: "/traps/purple"
+    config:
+      type: motor
+      forward_pin: TODO
+      backward_pin: TODO
+      pwm_pin: TODO
+  - name: orange
+    label: "Pomarańczowa"
+    ros_topic: "/traps/orange"
+    config:
+      type: motor
+      forward_pin: TODO
+      backward_pin: TODO
+      pwm_pin: TODO
+  - name: blue
+    label: "Niebieska"
+    ros_topic: "/traps/blue"
+    config:
+      type: motor
+      forward_pin: TODO
+      backward_pin: TODO
+      pwm_pin: TODO
+  - name: orange
+    label: "Pomarańczowa"
+    ros_topic: "/traps/orange"
+    config:
+      type: motor
+      forward_pin: TODO
+      backward_pin: TODO
+      pwm_pin: TODO
+  

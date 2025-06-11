@@ -1,10 +1,6 @@
 import rclpy
-from rclpy.node import Node
-from std_msgs.msg import Bool
-from typing import List
 from twitchgo.servo_obstacle import ServoObstacle
 from twitchgo.motor_obstacle import MotorObstacle
-from twitchgo.resource import Resource
 from ament_index_python.packages import get_package_share_directory
 from rclpy.executors import MultiThreadedExecutor
 import os
@@ -26,9 +22,9 @@ def main(args=None):
         config = trap.get('config', {})
 
         if config['type'] == 'motor':
-            nodes.append(MotorObstacle(trap['ros_topic'], config['pwm_pin'], config['forward_pin'], config['backward_pin']))
+            nodes.append(MotorObstacle(trap['name'], trap['ros_topic'], config['pwm_pin'], config['forward_pin'], config['backward_pin']))
         elif config['type'] == 'servo':
-            nodes.append(ServoObstacle(trap['ros_topic'], config['pwm_pin']))
+            nodes.append(ServoObstacle(trap['name'], trap['ros_topic'], config['pwm_pin']))
 
 
     executor = MultiThreadedExecutor()

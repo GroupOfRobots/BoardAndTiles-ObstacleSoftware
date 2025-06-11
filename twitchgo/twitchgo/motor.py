@@ -12,18 +12,18 @@ class Motor:
         GPIO.setup(self._first_in_pin, GPIO.OUT)
         GPIO.setup(self._second_in_pin, GPIO.OUT)
 
-    def run(self, pwm_value):
-        if pwm_value < 0:
+    def run(self, dir):
+        if dir < 0:
             GPIO.output(self._first_in_pin, GPIO.LOW)
             GPIO.output(self._second_in_pin, GPIO.HIGH)
-        elif pwm_value > 0:
+        elif dir > 0:
             GPIO.output(self._first_in_pin, GPIO.HIGH)
             GPIO.output(self._second_in_pin, GPIO.LOW)
         else:
             GPIO.output(self._first_in_pin, GPIO.HIGH)
             GPIO.output(self._second_in_pin, GPIO.HIGH)
         
-        self._pwm_pin.start(abs(pwm_value))
+        self._pwm_pin.start(100)  
 
     def stop(self):
         GPIO.output(self._first_in_pin, GPIO.HIGH)
