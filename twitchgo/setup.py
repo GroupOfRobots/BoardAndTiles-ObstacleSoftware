@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'obstacle = twitchgo.obstacle:main'
+            'main = twitchgo.main:main'
         ],
     },
 )

@@ -1,0 +1,21 @@
+traps:
+  - name: white
+    label: "Biała"
+    ros_topic: "/traps/white"
+    config:
+      type: servo
+      pin: TODO
+  - name: yellow
+    label: "Żółta"
+    ros_topic: "/traps/yellow"
+    config:
+      type: servo
+      pin: TODO
+  - name: green
+    label: "Zielona"
+    ros_topic: "/traps/green"
+    config:
+      type: motor
+      forward_pin: TODO
+      backward_pin: TODO
+      pwm_pin: TODO
