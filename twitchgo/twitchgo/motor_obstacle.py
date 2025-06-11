@@ -10,11 +10,11 @@ class MotorObstacle(Node):
         self.get_logger().info(f"Subscribed to {topic_name}")
 
     def listener_callback(self, msg: Bool):
-        if msg.data:
+        if msg.data == True:
             # random -1 or 1
             dir = 1 if self.get_clock().now().nanoseconds % 2 == 0 else -1
             self._motor.run(dir)  
             self.get_logger().info(f"Motor running in direction: {dir}")
-        else:
+        elif msg.data == False:
             self._motor.stop()
             self.get_logger().info("Motor stopped")

@@ -19,13 +19,10 @@ class Motor:
         elif dir > 0:
             GPIO.output(self._first_in_pin, GPIO.HIGH)
             GPIO.output(self._second_in_pin, GPIO.LOW)
-        else:
-            GPIO.output(self._first_in_pin, GPIO.HIGH)
-            GPIO.output(self._second_in_pin, GPIO.HIGH)
         
-        self._pwm_pin.start(100)  
+        self._pwm_pin.start(100.0)  
 
     def stop(self):
         GPIO.output(self._first_in_pin, GPIO.HIGH)
         GPIO.output(self._second_in_pin, GPIO.HIGH)
-        self._pwm_pin.start(0)
+        self._pwm_pin.start(0.0)
