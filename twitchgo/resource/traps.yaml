@@ -1,50 +1,49 @@
 traps:
+  - name: bionik
+    label: "Talerz: Bionik"
+    ros_topic: "/traps/bionik"
+    config:
+      type: motor
+      forward_pin: 4
+      backward_pin: 3
+      pwm_pin: 2
+  - name: violet
+    label: "Fioletowy"
+    ros_topic: "/traps/violet"
+    config:
+      type: motor
+      forward_pin: 16
+      backward_pin: 20
+      pwm_pin: 21
   - name: green
-    label: "Zielona"
+    label: "Zielony"
     ros_topic: "/traps/green"
     config:
       type: motor
-      forward_pin: TODO
-      backward_pin: TODO
-      pwm_pin: TODO
+      forward_pin: 19
+      backward_pin: 13
+      pwm_pin: 6
   - name: red
-    label: "Czerwona"
+    label: "Czerwony"
     ros_topic: "/traps/red"
     config:
       type: motor
-      forward_pin: TODO
-      backward_pin: TODO
-      pwm_pin: TODO
-  - name: purple
-    label: "Fioletowa"
-    ros_topic: "/traps/purple"
-    config:
-      type: motor
-      forward_pin: TODO
-      backward_pin: TODO
-      pwm_pin: TODO
+      forward_pin: 14
+      backward_pin: 15
+      pwm_pin: 18
   - name: orange
-    label: "Pomarańczowa"
+    label: "Chodnik: Pomarańczowy"
     ros_topic: "/traps/orange"
     config:
       type: motor
-      forward_pin: TODO
-      backward_pin: TODO
-      pwm_pin: TODO
+      forward_pin: 10
+      backward_pin: 22
+      pwm_pin: 27
   - name: blue
-    label: "Niebieska"
+    label: "Chodnik: Niebieski"
     ros_topic: "/traps/blue"
     config:
       type: motor
-      forward_pin: TODO
-      backward_pin: TODO
-      pwm_pin: TODO
-  - name: orange
-    label: "Pomarańczowa"
-    ros_topic: "/traps/orange"
-    config:
-      type: motor
-      forward_pin: TODO
-      backward_pin: TODO
-      pwm_pin: TODO
-  
+      forward_pin: 23
+      backward_pin: 24
+      pwm_pin: 25
