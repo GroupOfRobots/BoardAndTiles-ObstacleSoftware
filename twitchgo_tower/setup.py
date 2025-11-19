@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'main = tower.main:main'
+            'main = twitchgo_tower.main:main'
         ],
     },
 )

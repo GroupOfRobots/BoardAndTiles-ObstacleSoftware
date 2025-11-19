@@ -3,7 +3,7 @@ from std_msgs.msg import Bool
 from twitchgo_tower.servo_motor import ServoMotor
 
 HORIZONTAL_SERVO_PIN = 19
-VERTICAL_SERVO_PIN = 32
+VERTICAL_SERVO_PIN = 12
 
 class TowerNode(Node):
     def __init__(self):
