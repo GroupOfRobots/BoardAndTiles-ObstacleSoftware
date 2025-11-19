@@ -15,7 +15,8 @@ class ServoMotor:
     
     def set_position(self, duty_cycle):
         self.servo.ChangeDutyCycle(duty_cycle)
-        time.sleep(0.1)
+        time.sleep(0.5)
+        self.servo.ChangeDutyCycle(0)  
 
     def move_to_random_position(self):
         target = random.uniform(MAX_LEFT_DUTY_CYCLE, MAX_RIGHT_DUTY_CYCLE)

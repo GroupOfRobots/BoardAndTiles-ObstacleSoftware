@@ -7,7 +7,7 @@ VERTICAL_SERVO_PIN = 12
 
 class TowerNode(Node):
     def __init__(self):
-        super().__init__()
+        super().__init__('tower_node')
         self.horizontal_servo = ServoMotor(HORIZONTAL_SERVO_PIN)
         self.vertical_servo = ServoMotor(VERTICAL_SERVO_PIN)
         self.topic_name = 'tower_move'
